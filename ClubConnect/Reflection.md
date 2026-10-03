@@ -1,0 +1,3 @@
+# MP1 Reflection
+
+In this project, `performSegue(withIdentifier:sender:)` triggers a named Storyboard transition, while `prepare(for:sender:)` runs immediately before the transition to prepare the destination screen. This is similar to Android's explicit Intent navigation because both mechanisms identify the next screen and move the user through a multi-screen flow. The values are passed by assigning properties on `ConfirmationViewController`, which is comparable to placing values in an Intent with `putExtra()` and reading them with `getStringExtra()`. The `guard` statement and optional handling ensure that an empty name or unexpected destination does not crash the app.

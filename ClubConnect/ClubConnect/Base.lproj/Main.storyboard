@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nav-1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="document saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="Nav-Scene">
+            <objects>
+                <navigationController id="Nav-1" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NavBar-1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Welcome-1" kind="relationship" relationship="rootViewController" id="NavRoot-1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NavResponder-1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-360.0" y="0.0"/>
+        </scene>
+        <scene sceneID="Welcome-Scene">
+            <objects>
+                <viewController id="Welcome-1" customClass="WelcomeViewController" customModule="ClubConnect" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WelcomeView-1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WelcomeTitle-1">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover, connect, and belong on campus." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="WelcomeSubtitle-1">
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ClubImage-1"/>
+                            <textField opaque="NO" contentMode="scaleToFill" borderStyle="roundedRect" placeholder="Enter your name" translatesAutoresizingMaskIntoConstraints="NO" id="NameField-1">
+                                <constraints><constraint firstAttribute="height" constant="44" id="NameHeight-1"/></constraints>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Send me meeting reminders" translatesAutoresizingMaskIntoConstraints="NO" id="ReminderLabel-1">
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ReminderSwitch-1"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RoleSegments-1">
+                                <segments><segment title="Member"/><segment title="Officer"/></segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="JoinButton-1">
+                                <buttonConfiguration key="configuration" style="filled" title="Join the Club"/>
+                                <connections><action selector="joinClubTapped:" destination="Welcome-1" eventType="touchUpInside" id="JoinAction-1"/></connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WelcomeSafe-1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WelcomeTitle-1" firstAttribute="top" secondItem="WelcomeSafe-1" secondAttribute="top" constant="48" id="TitleTop"/>
+                            <constraint firstItem="WelcomeTitle-1" firstAttribute="leading" secondItem="WelcomeSafe-1" secondAttribute="leading" constant="20" id="TitleLead"/>
+                            <constraint firstItem="WelcomeTitle-1" firstAttribute="trailing" secondItem="WelcomeSafe-1" secondAttribute="trailing" constant="-20" id="TitleTrail"/>
+                            <constraint firstItem="WelcomeSubtitle-1" firstAttribute="top" secondItem="WelcomeTitle-1" secondAttribute="bottom" constant="8" id="SubtitleTop"/>
+                            <constraint firstItem="WelcomeSubtitle-1" firstAttribute="leading" secondItem="WelcomeSafe-1" secondAttribute="leading" constant="28" id="SubtitleLead"/>
+                            <constraint firstItem="WelcomeSubtitle-1" firstAttribute="trailing" secondItem="WelcomeSafe-1" secondAttribute="trailing" constant="-28" id="SubtitleTrail"/>
+                            <constraint firstItem="ClubImage-1" firstAttribute="top" secondItem="WelcomeSubtitle-1" secondAttribute="bottom" constant="20" id="ImageTop"/>
+                            <constraint firstItem="ClubImage-1" firstAttribute="centerX" secondItem="WelcomeSafe-1" secondAttribute="centerX" id="ImageCenter"/>
+                            <constraint firstItem="ClubImage-1" firstAttribute="width" constant="120" id="ImageWidth"/>
+                            <constraint firstItem="ClubImage-1" firstAttribute="height" constant="120" id="ImageHeight"/>
+                            <constraint firstItem="NameField-1" firstAttribute="top" secondItem="ClubImage-1" secondAttribute="bottom" constant="20" id="NameTop"/>
+                            <constraint firstItem="NameField-1" firstAttribute="leading" secondItem="WelcomeSafe-1" secondAttribute="leading" constant="32" id="NameLead"/>
+                            <constraint firstItem="NameField-1" firstAttribute="trailing" secondItem="WelcomeSafe-1" secondAttribute="trailing" constant="-32" id="NameTrail"/>
+                            <constraint firstItem="ReminderLabel-1" firstAttribute="top" secondItem="NameField-1" secondAttribute="bottom" constant="16" id="ReminderTop"/>
+                            <constraint firstItem="ReminderLabel-1" firstAttribute="leading" secondItem="NameField-1" secondAttribute="leading" id="ReminderLead"/>
+                            <constraint firstItem="ReminderSwitch-1" firstAttribute="centerY" secondItem="ReminderLabel-1" secondAttribute="centerY" id="ReminderSwitchCenter"/>
+                            <constraint firstItem="ReminderSwitch-1" firstAttribute="trailing" secondItem="NameField-1" secondAttribute="trailing" id="ReminderSwitchTrail"/>
+                            <constraint firstItem="RoleSegments-1" firstAttribute="top" secondItem="ReminderLabel-1" secondAttribute="bottom" constant="16" id="RoleTop"/>
+                            <constraint firstItem="RoleSegments-1" firstAttribute="leading" secondItem="NameField-1" secondAttribute="leading" id="RoleLead"/>
+                            <constraint firstItem="RoleSegments-1" firstAttribute="trailing" secondItem="NameField-1" secondAttribute="trailing" id="RoleTrail"/>
+                            <constraint firstItem="JoinButton-1" firstAttribute="top" secondItem="RoleSegments-1" secondAttribute="bottom" constant="24" id="JoinTop"/>
+                            <constraint firstItem="JoinButton-1" firstAttribute="centerX" secondItem="WelcomeSafe-1" secondAttribute="centerX" id="JoinCenter"/>
+                            <constraint firstItem="JoinButton-1" firstAttribute="bottom" lessThanOrEqual="YES" secondItem="WelcomeSafe-1" secondAttribute="bottom" constant="-24" id="JoinBottom"/>
+                        </constraints>
+                    </view>
+                    <navigationItem title="Campus Club Connect" id="WelcomeNavItem-1"/>
+                    <connections>
+                        <outlet property="clubImageView" destination="ClubImage-1" id="OutletImage"/>
+                        <outlet property="nameTextField" destination="NameField-1" id="OutletName"/>
+                        <outlet property="reminderSwitch" destination="ReminderSwitch-1" id="OutletReminder"/>
+                        <outlet property="roleSegmentedControl" destination="RoleSegments-1" id="OutletRole"/>
+                        <outlet property="titleLabel" destination="WelcomeTitle-1" id="OutletTitle"/>
+                        <segue destination="Confirmation-1" kind="show" identifier="ShowConfirmationSegue" id="ConfirmationSegue-1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WelcomeResponder-1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="420.0" y="0.0"/>
+        </scene>
+        <scene sceneID="Confirmation-Scene">
+            <objects>
+                <viewController id="Confirmation-1" customClass="ConfirmationViewController" customModule="ClubConnect" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ConfirmationView-1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="MessageLabel-1">
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ConfirmationSafe-1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MessageLabel-1" firstAttribute="centerX" secondItem="ConfirmationSafe-1" secondAttribute="centerX" id="MessageCenterX"/>
+                            <constraint firstItem="MessageLabel-1" firstAttribute="centerY" secondItem="ConfirmationSafe-1" secondAttribute="centerY" id="MessageCenterY"/>
+                            <constraint firstItem="MessageLabel-1" firstAttribute="leading" greaterThanOrEqual="YES" secondItem="ConfirmationSafe-1" secondAttribute="leading" constant="24" id="MessageLead"/>
+                            <constraint firstItem="MessageLabel-1" firstAttribute="trailing" lessThanOrEqual="YES" secondItem="ConfirmationSafe-1" secondAttribute="trailing" constant="-24" id="MessageTrail"/>
+                        </constraints>
+                    </view>
+                    <navigationItem title="Confirmation" id="ConfirmationNavItem-1"/>
+                    <connections>
+                        <outlet property="messageLabel" destination="MessageLabel-1" id="OutletMessage"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ConfirmationResponder-1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050.0" y="0.0"/>
+        </scene>
+    </scenes>
+</document>
