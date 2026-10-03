@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nav-1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="document saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="Nav-Scene">
+            <objects>
+                <navigationController id="Nav-1" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NavBar-1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Root-1" kind="relationship" relationship="rootViewController" id="NavRoot-1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NavResponder-1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-360.0" y="0.0"/>
+        </scene>
+        <scene sceneID="Root-Scene">
+            <objects>
+                <viewController id="Root-1" customClass="ViewController" customModule="CampusCompanion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RootView-1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Campus Companion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="RootTitle-1">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Campus, In Your Pocket" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="RootSubtitle-1">
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="RootImage-1"/>
+                            <textField opaque="NO" contentMode="scaleToFill" borderStyle="roundedRect" placeholder="Enter your name" translatesAutoresizingMaskIntoConstraints="NO" id="NameField-1">
+                                <constraints><constraint firstAttribute="height" constant="44" id="NameHeight-1"/></constraints>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Notify me about events" translatesAutoresizingMaskIntoConstraints="NO" id="NotifyLabel-1">
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NotifySwitch-1"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RoleSegments-1">
+                                <segments><segment title="Student"/><segment title="Faculty"/></segments>
+                            </segmentedControl>
+                            <datePicker opaque="NO" contentMode="scaleToFill" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="DatePicker-1"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Guests" translatesAutoresizingMaskIntoConstraints="NO" id="GuestsLabel-1">
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GuestsStepper-1"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="ExploreButton-1">
+                                <buttonConfiguration key="configuration" style="filled" title="Explore Campus"/>
+                                <connections><action selector="exploreButtonTapped:" destination="Root-1" eventType="touchUpInside" id="ExploreAction-1"/></connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="AnnouncementsButton-1">
+                                <buttonConfiguration key="configuration" style="tinted" title="Campus Announcements"/>
+                                <connections><segue destination="Announcements-1" kind="show" id="AnnouncementsSegue-1"/></connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RootSafe-1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RootTitle-1" firstAttribute="top" secondItem="RootSafe-1" secondAttribute="top" constant="24" id="RootTitleTop"/>
+                            <constraint firstItem="RootTitle-1" firstAttribute="leading" secondItem="RootSafe-1" secondAttribute="leading" constant="20" id="RootTitleLead"/>
+                            <constraint firstItem="RootTitle-1" firstAttribute="trailing" secondItem="RootSafe-1" secondAttribute="trailing" constant="-20" id="RootTitleTrail"/>
+                            <constraint firstItem="RootSubtitle-1" firstAttribute="top" secondItem="RootTitle-1" secondAttribute="bottom" constant="8" id="RootSubTop"/>
+                            <constraint firstItem="RootSubtitle-1" firstAttribute="leading" secondItem="RootSafe-1" secondAttribute="leading" constant="20" id="RootSubLead"/>
+                            <constraint firstItem="RootSubtitle-1" firstAttribute="trailing" secondItem="RootSafe-1" secondAttribute="trailing" constant="-20" id="RootSubTrail"/>
+                            <constraint firstItem="RootImage-1" firstAttribute="top" secondItem="RootSubtitle-1" secondAttribute="bottom" constant="16" id="RootImageTop"/>
+                            <constraint firstItem="RootImage-1" firstAttribute="centerX" secondItem="RootSafe-1" secondAttribute="centerX" id="RootImageCenter"/>
+                            <constraint firstItem="RootImage-1" firstAttribute="width" constant="70" id="RootImageWidth"/>
+                            <constraint firstItem="RootImage-1" firstAttribute="height" constant="70" id="RootImageHeight"/>
+                            <constraint firstItem="NameField-1" firstAttribute="top" secondItem="RootImage-1" secondAttribute="bottom" constant="12" id="NameTop"/>
+                            <constraint firstItem="NameField-1" firstAttribute="leading" secondItem="RootSafe-1" secondAttribute="leading" constant="32" id="NameLead"/>
+                            <constraint firstItem="NameField-1" firstAttribute="trailing" secondItem="RootSafe-1" secondAttribute="trailing" constant="-32" id="NameTrail"/>
+                            <constraint firstItem="NotifyLabel-1" firstAttribute="top" secondItem="NameField-1" secondAttribute="bottom" constant="12" id="NotifyLabelTop"/>
+                            <constraint firstItem="NotifyLabel-1" firstAttribute="leading" secondItem="NameField-1" secondAttribute="leading" id="NotifyLabelLead"/>
+                            <constraint firstItem="NotifySwitch-1" firstAttribute="centerY" secondItem="NotifyLabel-1" secondAttribute="centerY" id="NotifySwitchCenter"/>
+                            <constraint firstItem="NotifySwitch-1" firstAttribute="trailing" secondItem="NameField-1" secondAttribute="trailing" id="NotifySwitchTrail"/>
+                            <constraint firstItem="RoleSegments-1" firstAttribute="top" secondItem="NotifyLabel-1" secondAttribute="bottom" constant="12" id="RoleTop"/>
+                            <constraint firstItem="RoleSegments-1" firstAttribute="leading" secondItem="NameField-1" secondAttribute="leading" id="RoleLead"/>
+                            <constraint firstItem="RoleSegments-1" firstAttribute="trailing" secondItem="NameField-1" secondAttribute="trailing" id="RoleTrail"/>
+                            <constraint firstItem="DatePicker-1" firstAttribute="top" secondItem="RoleSegments-1" secondAttribute="bottom" constant="8" id="DateTop"/>
+                            <constraint firstItem="DatePicker-1" firstAttribute="centerX" secondItem="RootSafe-1" secondAttribute="centerX" id="DateCenter"/>
+                            <constraint firstItem="GuestsLabel-1" firstAttribute="top" secondItem="DatePicker-1" secondAttribute="bottom" constant="6" id="GuestsLabelTop"/>
+                            <constraint firstItem="GuestsLabel-1" firstAttribute="leading" secondItem="NameField-1" secondAttribute="leading" id="GuestsLabelLead"/>
+                            <constraint firstItem="GuestsStepper-1" firstAttribute="centerY" secondItem="GuestsLabel-1" secondAttribute="centerY" id="GuestsStepperCenter"/>
+                            <constraint firstItem="GuestsStepper-1" firstAttribute="trailing" secondItem="NameField-1" secondAttribute="trailing" id="GuestsStepperTrail"/>
+                            <constraint firstItem="ExploreButton-1" firstAttribute="top" secondItem="GuestsLabel-1" secondAttribute="bottom" constant="12" id="ExploreTop"/>
+                            <constraint firstItem="ExploreButton-1" firstAttribute="centerX" secondItem="RootSafe-1" secondAttribute="centerX" id="ExploreCenter"/>
+                            <constraint firstItem="AnnouncementsButton-1" firstAttribute="top" secondItem="ExploreButton-1" secondAttribute="bottom" constant="16" id="AnnouncementsTop"/>
+                            <constraint firstItem="AnnouncementsButton-1" firstAttribute="centerX" secondItem="RootSafe-1" secondAttribute="centerX" id="AnnouncementsCenter"/>
+                            <constraint firstItem="AnnouncementsButton-1" firstAttribute="bottom" lessThanOrEqual="YES" secondItem="RootSafe-1" secondAttribute="bottom" constant="-12" id="AnnouncementsBottom"/>
+                        </constraints>
+                    </view>
+                    <navigationItem title="Campus Companion" id="RootNavItem-1"/>
+                    <connections>
+                        <outlet property="campusImageView" destination="RootImage-1" id="RootOutletImage"/>
+                        <outlet property="eventDatePicker" destination="DatePicker-1" id="RootOutletDate"/>
+                        <outlet property="guestsStepper" destination="GuestsStepper-1" id="RootOutletGuests"/>
+                        <outlet property="nameTextField" destination="NameField-1" id="RootOutletName"/>
+                        <outlet property="notifySwitch" destination="NotifySwitch-1" id="RootOutletNotify"/>
+                        <outlet property="roleSegmentedControl" destination="RoleSegments-1" id="RootOutletRole"/>
+                        <outlet property="subtitleLabel" destination="RootSubtitle-1" id="RootOutletSubtitle"/>
+                        <outlet property="titleLabel" destination="RootTitle-1" id="RootOutletTitle"/>
+                        <segue destination="Detail-1" kind="show" identifier="ShowDetailSegue" id="DetailSegue-1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RootResponder-1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400.0" y="0.0"/>
+        </scene>
+        <scene sceneID="Announcements-Scene">
+            <objects>
+                <tableViewController id="Announcements-1" customClass="AnnouncementsViewController" customModule="CampusCompanion" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" estimatedRowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AnnouncementsTable-1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnnouncementCell" rowHeight="72" id="AnnouncementCellProto-1" customClass="AnnouncementCell" customModule="CampusCompanion" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="72"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AnnouncementCellProto-1" id="AnnouncementContent-1">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="CategoryIcon-1">
+                                            <rect key="frame" x="16" y="20" width="32" height="32"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Announcement title" translatesAutoresizingMaskIntoConstraints="NO" id="CellTitle-1">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category • Date" translatesAutoresizingMaskIntoConstraints="NO" id="CellDate-1">
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="CategoryIcon-1" firstAttribute="leading" secondItem="AnnouncementContent-1" secondAttribute="leading" constant="16" id="CellIconLead"/>
+                                        <constraint firstItem="CategoryIcon-1" firstAttribute="centerY" secondItem="AnnouncementContent-1" secondAttribute="centerY" id="CellIconCenter"/>
+                                        <constraint firstItem="CategoryIcon-1" firstAttribute="width" constant="32" id="CellIconWidth"/>
+                                        <constraint firstItem="CategoryIcon-1" firstAttribute="height" constant="32" id="CellIconHeight"/>
+                                        <constraint firstItem="CellTitle-1" firstAttribute="leading" secondItem="CategoryIcon-1" secondAttribute="trailing" constant="16" id="CellTitleLead"/>
+                                        <constraint firstItem="CellTitle-1" firstAttribute="trailing" secondItem="AnnouncementContent-1" secondAttribute="trailing" constant="-16" id="CellTitleTrail"/>
+                                        <constraint firstItem="CellTitle-1" firstAttribute="top" secondItem="AnnouncementContent-1" secondAttribute="top" constant="12" id="CellTitleTop"/>
+                                        <constraint firstItem="CellDate-1" firstAttribute="leading" secondItem="CellTitle-1" secondAttribute="leading" id="CellDateLead"/>
+                                        <constraint firstItem="CellDate-1" firstAttribute="trailing" secondItem="CellTitle-1" secondAttribute="trailing" id="CellDateTrail"/>
+                                        <constraint firstItem="CellDate-1" firstAttribute="top" secondItem="CellTitle-1" secondAttribute="bottom" constant="4" id="CellDateTop"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="categoryIconImageView" destination="CategoryIcon-1" id="CellOutletIcon"/>
+                                    <outlet property="dateLabel" destination="CellDate-1" id="CellOutletDate"/>
+                                    <outlet property="titleLabel" destination="CellTitle-1" id="CellOutletTitle"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem title="Campus Announcements" id="AnnouncementsNavItem-1"/>
+                    <connections>
+                        <segue destination="Detail-1" kind="show" identifier="ShowAnnouncementDetailSegue" id="AnnouncementDetailSegue-1"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AnnouncementsResponder-1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="780.0" y="560.0"/>
+        </scene>
+        <scene sceneID="Detail-Scene">
+            <objects>
+                <viewController id="Detail-1" customClass="DetailViewController" customModule="CampusCompanion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DetailView-1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="MessageLabel-1">
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DetailSafe-1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MessageLabel-1" firstAttribute="centerX" secondItem="DetailSafe-1" secondAttribute="centerX" id="MessageCenterX"/>
+                            <constraint firstItem="MessageLabel-1" firstAttribute="centerY" secondItem="DetailSafe-1" secondAttribute="centerY" id="MessageCenterY"/>
+                            <constraint firstItem="MessageLabel-1" firstAttribute="leading" greaterThanOrEqual="YES" secondItem="DetailSafe-1" secondAttribute="leading" constant="24" id="MessageLead"/>
+                            <constraint firstItem="MessageLabel-1" firstAttribute="trailing" lessThanOrEqual="YES" secondItem="DetailSafe-1" secondAttribute="trailing" constant="-24" id="MessageTrail"/>
+                        </constraints>
+                    </view>
+                    <navigationItem title="Campus Events" id="DetailNavItem-1"/>
+                    <connections>
+                        <outlet property="messageLabel" destination="MessageLabel-1" id="DetailOutletMessage"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DetailResponder-1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1150.0" y="0.0"/>
+        </scene>
+    </scenes>
+</document>
