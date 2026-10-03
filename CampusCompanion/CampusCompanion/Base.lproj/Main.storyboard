@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VC-1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="document saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="Scene-1">
+            <objects>
+                <viewController id="VC-1" customClass="ViewController" customModule="CampusCompanion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="View-1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Campus Companion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Title-1">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Campus, In Your Pocket" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Subtitle-1">
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Image-1">
+                                <rect key="frame" x="132" y="196" width="150" height="150"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Button-1">
+                                <state key="normal" title="Get Started"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Get Started"/>
+                                <connections>
+                                    <action selector="getStartedTapped:" destination="VC-1" eventType="touchUpInside" id="Action-1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SafeArea-1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Title-1" firstAttribute="top" secondItem="SafeArea-1" secondAttribute="top" constant="60" id="C-Title-Top"/>
+                            <constraint firstItem="Title-1" firstAttribute="leading" secondItem="SafeArea-1" secondAttribute="leading" constant="20" id="C-Title-Lead"/>
+                            <constraint firstItem="Title-1" firstAttribute="trailing" secondItem="SafeArea-1" secondAttribute="trailing" constant="-20" id="C-Title-Trail"/>
+                            <constraint firstItem="Subtitle-1" firstAttribute="top" secondItem="Title-1" secondAttribute="bottom" constant="8" id="C-Sub-Top"/>
+                            <constraint firstItem="Subtitle-1" firstAttribute="leading" secondItem="SafeArea-1" secondAttribute="leading" constant="20" id="C-Sub-Lead"/>
+                            <constraint firstItem="Subtitle-1" firstAttribute="trailing" secondItem="SafeArea-1" secondAttribute="trailing" constant="-20" id="C-Sub-Trail"/>
+                            <constraint firstItem="Image-1" firstAttribute="top" secondItem="Subtitle-1" secondAttribute="bottom" constant="40" id="C-Image-Top"/>
+                            <constraint firstItem="Image-1" firstAttribute="centerX" secondItem="SafeArea-1" secondAttribute="centerX" id="C-Image-CenterX"/>
+                            <constraint firstItem="Image-1" firstAttribute="width" constant="150" id="C-Image-Width"/>
+                            <constraint firstItem="Image-1" firstAttribute="height" constant="150" id="C-Image-Height"/>
+                            <constraint firstItem="Button-1" firstAttribute="top" secondItem="Image-1" secondAttribute="bottom" constant="24" id="C-Button-Top"/>
+                            <constraint firstItem="Button-1" firstAttribute="centerX" secondItem="SafeArea-1" secondAttribute="centerX" id="C-Button-CenterX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="campusImageView" destination="Image-1" id="Outlet-Image"/>
+                        <outlet property="subtitleLabel" destination="Subtitle-1" id="Outlet-Subtitle"/>
+                        <outlet property="titleLabel" destination="Title-1" id="Outlet-Title"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FirstResponder-1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+</document>
