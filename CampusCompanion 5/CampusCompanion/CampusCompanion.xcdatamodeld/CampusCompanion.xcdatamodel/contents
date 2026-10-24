@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23504" systemVersion="25.0" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CampusAnnouncement" representedClassName="CampusAnnouncement" syncable="YES" codeGenerationType="manual/none">
+        <attribute name="title" optional="NO" attributeType="String" defaultValueString="" syncable="YES"/>
+        <attribute name="date" optional="NO" attributeType="String" defaultValueString="" syncable="YES"/>
+        <attribute name="category" optional="NO" attributeType="String" defaultValueString="" syncable="YES"/>
+        <attribute name="location" optional="NO" attributeType="String" defaultValueString="" syncable="YES"/>
+        <attribute name="priority" optional="NO" attributeType="String" defaultValueString="Normal" syncable="YES"/>
+    </entity>
+</model>
