@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21512" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="NO" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="navigation-controller">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="navigation-scene">
+            <objects>
+                <navigationController id="navigation-controller" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="navigation-bar">
+                        <rect key="frame" x="0.0" y="0.0" width="393.0" height="44.0"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="profile-controller" kind="relationship" relationship="rootViewController" id="profile-root-segue"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="navigation-responder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-720.0" y="-20.0"/>
+        </scene>
+        <scene sceneID="profile-scene">
+            <objects>
+                <viewController storyboardIdentifier="profile-controller" id="profile-controller" customClass="ViewController" customModule="CampusCompanion_Exercise6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="profile-view">
+                        <rect key="frame" x="0.0" y="0.0" width="393.0" height="852.0"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Student Profile" id="profile-navigation-item"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="profile-responder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="-20.0"/>
+        </scene>
+        <scene sceneID="announcements-scene">
+            <objects>
+                <viewController storyboardIdentifier="announcements-controller" id="announcements-controller" customClass="AnnouncementsViewController" customModule="CampusCompanion_Exercise6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="announcements-view">
+                        <rect key="frame" x="0.0" y="0.0" width="393.0" height="852.0"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Campus Announcements" id="announcements-navigation-item"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="announcements-responder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="720.0" y="-20.0"/>
+        </scene>
+        <scene sceneID="detail-scene">
+            <objects>
+                <viewController storyboardIdentifier="detail-controller" id="detail-controller" customClass="DetailViewController" customModule="CampusCompanion_Exercise6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="detail-view">
+                        <rect key="frame" x="0.0" y="0.0" width="393.0" height="852.0"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Campus Events" id="detail-navigation-item"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="detail-responder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="720.0" y="620.0"/>
+        </scene>
+    </scenes>
+</document>
+
