@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21512" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nav-controller">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="System symbols" minToolsVersion="12.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="nav-scene">
+            <objects>
+                <navigationController id="nav-controller" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="nav-bar">
+                        <rect key="frame" x="0.0" y="0.0" width="393.0" height="44.0"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="welcome-controller" kind="relationship" relationship="rootViewController" id="root-segue"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nav-first-responder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-640.0" y="-20.0"/>
+        </scene>
+        <scene sceneID="welcome-scene">
+            <objects>
+                <viewController id="welcome-controller" customClass="WelcomeViewController" customModule="CampusClubConnect" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="welcome-view">
+                        <rect key="frame" x="0.0" y="0.0" width="393.0" height="852.0"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="welcome-stack">
+                                <rect key="frame" x="32.0" y="96.0" width="329.0" height="530.0"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Campus Club Connect" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="welcome-title">
+                                        <rect key="frame" x="18.0" y="0.0" width="293.0" height="34.0"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="profile-image-view">
+                                        <rect key="frame" x="84.5" y="52.0" width="160.0" height="160.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="profile-width"/>
+                                            <constraint firstAttribute="height" constant="160" id="profile-height"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="choose-photo-button">
+                                        <rect key="frame" x="108.5" y="230.0" width="112.0" height="44.0"/>
+                                        <state key="normal" title="Choose Photo"/>
+                                        <connections>
+                                            <action selector="choosePhotoTapped:" destination="welcome-controller" eventType="touchUpInside" id="choose-photo-action"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a photo to save it for the next launch." textAlignment="center" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="photo-status-label">
+                                        <rect key="frame" x="19.0" y="292.0" width="291.0" height="38.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="welcome-spacer">
+                                        <rect key="frame" x="0.0" y="348.0" width="329.0" height="12.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="welcome-spacer-height"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="clubs-button">
+                                        <rect key="frame" x="72.0" y="378.0" width="185.0" height="46.0"/>
+                                        <state key="normal" title="Campus Clubs"/>
+                                        <connections>
+                                            <segue destination="clubs-controller" kind="show" id="clubs-segue"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="map-button">
+                                        <rect key="frame" x="72.0" y="442.0" width="185.0" height="46.0"/>
+                                        <state key="normal" title="Campus Map"/>
+                                        <connections>
+                                            <segue destination="map-controller" kind="show" id="map-segue"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="welcome-safe-area"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="welcome-stack" firstAttribute="leading" secondItem="welcome-safe-area" secondAttribute="leading" constant="32" id="welcome-stack-leading"/>
+                            <constraint firstItem="welcome-stack" firstAttribute="trailing" secondItem="welcome-safe-area" secondAttribute="trailing" constant="-32" id="welcome-stack-trailing"/>
+                            <constraint firstItem="welcome-stack" firstAttribute="top" secondItem="welcome-safe-area" secondAttribute="top" constant="40" id="welcome-stack-top"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Welcome" id="welcome-navigation-item"/>
+                    <connections>
+                        <outlet property="photoStatusLabel" destination="photo-status-label" id="status-outlet"/>
+                        <outlet property="profileImageView" destination="profile-image-view" id="image-outlet"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="welcome-first-responder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100.0" y="-20.0"/>
+        </scene>
+        <scene sceneID="clubs-scene">
+            <objects>
+                <viewController id="clubs-controller" customClass="ClubListViewController" customModule="CampusClubConnect" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="clubs-view">
+                        <rect key="frame" x="0.0" y="0.0" width="393.0" height="852.0"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Syncing from remote JSON..." textAlignment="center" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="clubs-status-label">
+                                <rect key="frame" x="20.0" y="104.0" width="353.0" height="40.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="clubs-table-view">
+                                <rect key="frame" x="0.0" y="160.0" width="393.0" height="650.0"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="clubs-safe-area"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="clubs-status-label" firstAttribute="top" secondItem="clubs-safe-area" secondAttribute="top" constant="12" id="clubs-status-top"/>
+                            <constraint firstItem="clubs-status-label" firstAttribute="leading" secondItem="clubs-safe-area" secondAttribute="leading" constant="20" id="clubs-status-leading"/>
+                            <constraint firstItem="clubs-status-label" firstAttribute="trailing" secondItem="clubs-safe-area" secondAttribute="trailing" constant="-20" id="clubs-status-trailing"/>
+                            <constraint firstItem="clubs-table-view" firstAttribute="top" secondItem="clubs-status-label" secondAttribute="bottom" constant="12" id="clubs-table-top"/>
+                            <constraint firstItem="clubs-table-view" firstAttribute="leading" secondItem="clubs-view" secondAttribute="leading" id="clubs-table-leading"/>
+                            <constraint firstItem="clubs-table-view" firstAttribute="trailing" secondItem="clubs-view" secondAttribute="trailing" id="clubs-table-trailing"/>
+                            <constraint firstItem="clubs-table-view" firstAttribute="bottom" secondItem="clubs-safe-area" secondAttribute="bottom" id="clubs-table-bottom"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Campus Clubs" id="clubs-navigation-item">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="refresh-bar-button">
+                            <connections>
+                                <action selector="refreshTapped:" destination="clubs-controller" id="refresh-action"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="statusLabel" destination="clubs-status-label" id="clubs-status-outlet"/>
+                        <outlet property="tableView" destination="clubs-table-view" id="clubs-table-outlet"/>
+                        <outlet property="refreshButton" destination="refresh-bar-button" id="refresh-outlet"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="clubs-first-responder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="900.0" y="-80.0"/>
+        </scene>
+        <scene sceneID="map-scene">
+            <objects>
+                <viewController id="map-controller" customClass="CampusMapViewController" customModule="CampusClubConnect" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="map-view-controller">
+                        <rect key="frame" x="0.0" y="0.0" width="393.0" height="852.0"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="campus-map-view">
+                                <rect key="frame" x="0.0" y="88.0" width="393.0" height="570.0"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for location permission..." textAlignment="center" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="distance-label">
+                                <rect key="frame" x="24.0" y="690.0" width="345.0" height="72.0"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="map-safe-area"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="campus-map-view" firstAttribute="top" secondItem="map-safe-area" secondAttribute="top" id="map-top"/>
+                            <constraint firstItem="campus-map-view" firstAttribute="leading" secondItem="map-view-controller" secondAttribute="leading" id="map-leading"/>
+                            <constraint firstItem="campus-map-view" firstAttribute="trailing" secondItem="map-view-controller" secondAttribute="trailing" id="map-trailing"/>
+                            <constraint firstItem="distance-label" firstAttribute="top" secondItem="campus-map-view" secondAttribute="bottom" constant="24" id="distance-top"/>
+                            <constraint firstItem="distance-label" firstAttribute="leading" secondItem="map-safe-area" secondAttribute="leading" constant="24" id="distance-leading"/>
+                            <constraint firstItem="distance-label" firstAttribute="trailing" secondItem="map-safe-area" secondAttribute="trailing" constant="-24" id="distance-trailing"/>
+                            <constraint firstItem="distance-label" firstAttribute="bottom" secondItem="map-safe-area" secondAttribute="bottom" constant="-24" id="distance-bottom"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Campus Map" id="map-navigation-item"/>
+                    <connections>
+                        <outlet property="distanceLabel" destination="distance-label" id="distance-outlet"/>
+                        <outlet property="mapView" destination="campus-map-view" id="map-outlet"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="map-first-responder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="900.0" y="620.0"/>
+        </scene>
+    </scenes>
+</document>
+
